@@ -1,16 +1,12 @@
-<!doctype html>
-<html>
-  <head>
-    {% if title %}
-    <title>{{ title }} - Microblog</title>
-    {% else %}
-    <title>Welcome to Microblog</title>
-    {% endif %}
-  </head>
-  <body>
-    <div>Hi {{ users[user]['username'] }} you {{ users[user]['description'] }}</div>
-      {% for post in posts %}
+{% extends "base.html" %}
+
+{% block content %}
+  <div>Hi {{ users[user]['username'] }} you {{ users[user]['description'] }}</div>
+  {% if posts|length == 0 %}
+    <div>Nothing to say for yourself, then?</div>
+  {% else %}
+    {% for post in posts %}
       <div><p>{{ users[post['author']]['username'] }} says: <b>{{ post['body'] }}</b></p></div>
-      {% endfor %}
-  </body>
-</html>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

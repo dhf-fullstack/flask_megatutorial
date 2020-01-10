@@ -31,4 +31,6 @@ def index():
             'body': 'Rumpy Pumpy! A Ha Ha Ha Ha Ha!!'
         }
     ]
-    return render_template('index.html', title='series 1', user=8, users=users, posts=posts)
+    user = 8
+    ps = [p for p in posts if p['author'] == user]
+    return render_template('index.html', title='series 1', user=user, users=users, posts=ps)
