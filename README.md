@@ -3,5 +3,5 @@
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
 ```
-$ FLASK_APP=app FLASK_DEBUG=1 flask run
+FLASK_APP=microblog.py FLASK_ENV=development FLASK_DEBUG=1 SECRET_KEY='...whatever...' flask run
 ```
