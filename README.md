@@ -8,3 +8,8 @@ flask db migrate -m "...commit message..."
 flask db upgrade
 FLASK_APP=microblog.py flask shell # microblog.py shell context
 ```
+
+TODO:
+$ pip install python-dotenv
+.flaskenv: Environment variables for flask command
+FLASK_APP=microblog.py
